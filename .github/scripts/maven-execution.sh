@@ -50,7 +50,7 @@ if [ "$GITHUB_REF_TYPE" = "tag" ]; then
     mvn_phase="deploy"
     mvn_ci_revision="$semver"
     mvn_ci_sha1_short=""
-    mvn_profiles_active="${mvn_profiles_active},release-to-central"
+    mvn_profiles_active="-Prelease-to-central"
 
     # Test for SemVer pre-releases. We turn those into SNAPSHOTs
     if [ ! -z "$semver_prerelease" ]; then
@@ -95,6 +95,6 @@ set -x
   -DaltSnapshotDeploymentRepository=maven-central::$mvn_central_snapshot_url \
   -Dci.project.url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" \
   -Dchangelist=$mvn_ci_changelist  -Dsha1=$mvn_ci_sha1_short  -Drevision=$mvn_ci_revision \
-  -P$mvn_profiles_active \
+  $mvn_profiles_active \
   $mvn_phase
 
