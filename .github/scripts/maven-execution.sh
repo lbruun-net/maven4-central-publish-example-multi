@@ -96,5 +96,6 @@ set -x
   -Dci.project.url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" \
   -Dchangelist=$mvn_ci_changelist  -Dsha1=$mvn_ci_sha1_short  -Drevision=$mvn_ci_revision \
   $mvn_profiles_active \
+  help:active-profiles \
   $mvn_phase
 
