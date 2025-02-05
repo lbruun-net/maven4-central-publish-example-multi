@@ -71,6 +71,7 @@
       <id>ci</id>
       <activation>
         <property>
+          <!-- Many CI systems, e.g. GitHub, GitLab, Travis, etc, set this variable -->
           <name>env.CI</name>
           <value>true</value>
         </property>
