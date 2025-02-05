@@ -8,11 +8,11 @@
     <artifactId>parent</artifactId>
   </parent>
   <artifactId>module-x</artifactId>
-  <name>Maven4 :: Multi-module Example :: Module </name>
+  <name>Maven4 :: Multi-module Example :: Module X</name>
 
   <properties>
-    <maven.install.skip>false</maven.install.skip>
-    <maven.deploy.skip>false</maven.deploy.skip>
+    <maven.install.skip>false</maven.install.skip> <!-- override parent's setting -->
+    <maven.deploy.skip>false</maven.deploy.skip>   <!-- override parent's setting -->
   </properties>
 
 </project>

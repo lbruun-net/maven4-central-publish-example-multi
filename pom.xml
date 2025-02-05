@@ -69,6 +69,12 @@
     <profile>
       <!-- This profile should be activated when building in the CI system -->
       <id>ci</id>
+      <activation>
+        <property>
+          <name>env.CI</name>
+          <value>true</value>
+        </property>
+      </activation>
       <build>
         <plugins>
           <!--  Javadoc here because we want to know early if there are errors in Javadoc generation.
@@ -161,7 +167,7 @@
                   <goal>sign</goal>
                 </goals>
                 <configuration>
-                  <signer>bc</signer>
+                  <signer>bc</signer> <!-- use Bouncy Castle -->
                 </configuration>
               </execution>
             </executions>

@@ -13,8 +13,8 @@
 
 
   <properties>
-    <maven.install.skip>false</maven.install.skip>
-    <maven.deploy.skip>false</maven.deploy.skip>
+    <maven.install.skip>false</maven.install.skip> <!-- override parent's setting -->
+    <maven.deploy.skip>false</maven.deploy.skip>   <!-- override parent's setting -->
   </properties>
 
   <dependencyManagement>

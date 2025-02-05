@@ -18,7 +18,7 @@ is executed.
 No weird third-party Action is used.
 
 - It works with how GitHub is intended to work. Your releases are releases both in a Maven
-sense but they also appear in the "Releases" section of your project. Thus, you can attached
+sense and in a GitHub sense. They also appear in the "Releases" section of your project. Thus, you can attach
 comments and release notes to your releases, etc.
 
 It also has another benefit: It doesn't encourage publication from developer's own workstation.

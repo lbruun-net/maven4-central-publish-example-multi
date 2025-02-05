@@ -24,7 +24,7 @@ mvn_phase="verify"
 mvn_ci_revision=""
 mvn_ci_sha1_short="${GITHUB_SHA::7}"
 mvn_ci_changelist=""
-mvn_profiles_active="ci"
+mvn_profiles_active=""
 
 # SemVer regular expression:
 #  - The tag can optionally start with the 'v' but the 'v' doesn't become part of
