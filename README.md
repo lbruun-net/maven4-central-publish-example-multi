@@ -38,7 +38,7 @@ should be executed. Change it according to your needs and workflow.
 
 - Must be using the [Maven CI Friendly feature](https://maven.apache.org/maven-ci-friendly.html) and the version
 element must be `<version>${revision}${sha1}${changelist}</version>`. 
-(IMO, all your projects should be using the Maven CI Friendly paradigm)
+(IMO, all your projects should be using the Maven CI Friendly version paradigm)
 
 - Must have a profile named `release-to-central` and one named `ci`. See the example in this repo.
 
@@ -50,11 +50,12 @@ element must be `<version>${revision}${sha1}${changelist}</version>`.
 
 The following GitHub Secrets must exist:
 
-- `MAVEN_CENTRAL_GPG_SECRET_KEY`. GnuPG private key used for signing artifacts published to Maven Central. You can
-simply take the output from the `gpg --export-secret-key --armor` command and paste it directly into GitHub UI when
+- `MAVEN_CENTRAL_GPG_SECRET_KEY`. Private key used for signing artifacts published to Maven Central. The value
+must be in [TSK format](https://www.ietf.org/archive/id/draft-ietf-openpgp-crypto-refresh-12.html#name-transferable-secret-keys)
+You can simply take the output from the `gpg --export-secret-key --armor` command and paste it directly into GitHub UI when
 you configure the value for this secret (never mind it has line endings).
 
-- `MAVEN_CENTRAL_GPG_PASSPHRASE`. GnuPG passphrase to accompany your private key.
+- `MAVEN_CENTRAL_GPG_PASSPHRASE`. Passphrase to accompany your private key.
 
 
 ### Credentials for publishing to Maven Central
@@ -68,7 +69,7 @@ The following GitHub Secrets must exist:
  
 - `MAVEN_CENTRAL_PASSWORD`. Password part of the Sonatype Nexus token you use to publish to Maven Central. (*)
 
-You can use your old-style username/password for the Sonatype Nexus UI instead of token. However, Sonatype has announced that 
+*) You can also use your old-style username/password for the Sonatype Nexus UI instead of token. However, Sonatype has announced that 
 old-style username/password will eventually stop working for publishing. You still need your old-style username/password to log 
 into the Sonatype Nexus UI, though.
 

@@ -4,7 +4,7 @@
          child.project.url.inherit.append.path="false">
 
   <modelVersion>4.1.0</modelVersion>
-  <groupId>net.lbruun.examples.maven4centralpublish.multi</groupId>
+  <groupId>net.lbruun.examples.maven4centralpublish.multi.ml_4_1_0</groupId>
   <artifactId>parent</artifactId>
   <version>${revision}${sha1}${changelist}</version> <!-- never change this -->
   <packaging>pom</packaging>
@@ -17,9 +17,10 @@
     <maven.compiler.release>11</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <!-- parent doesn't need to be installed or deployed -->
+    <!-- parent doesn't need to be installed or deployed ... or signed -->
     <maven.install.skip>true</maven.install.skip>
     <maven.deploy.skip>true</maven.deploy.skip>
+    <gpg.skip>true</gpg.skip>
 
     <!-- Some sensible defaults for local development.
          These are only used when executing Maven locally. -->
@@ -50,11 +51,7 @@
 
   <!-- This section is not used in the deploy/release process, but is required to exist for
        publishing to Maven Central.                                                -->
-  <scm child.scm.connection.inherit.append.path="false"
-       child.scm.developerConnection.inherit.append.path="false"
-       child.scm.url.inherit.append.path="false">
-    <connection>scm:git:${ci.project.url}.git</connection>
-    <developerConnection>scm:git:${ci.project.url}.git</developerConnection>
+  <scm child.scm.url.inherit.append.path="false">
     <url>${ci.project.url}</url>
   </scm>
 

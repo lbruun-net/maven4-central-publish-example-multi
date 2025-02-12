@@ -4,7 +4,7 @@
   <modelVersion>4.1.0</modelVersion>
 
   <parent>
-    <groupId>net.lbruun.examples.maven4centralpublish.multi</groupId>
+    <groupId>net.lbruun.examples.maven4centralpublish.multi.ml_4_1_0</groupId>
     <artifactId>parent</artifactId>
   </parent>
   <artifactId>module-x</artifactId>
@@ -13,6 +13,7 @@
   <properties>
     <maven.install.skip>false</maven.install.skip> <!-- override parent's setting -->
     <maven.deploy.skip>false</maven.deploy.skip>   <!-- override parent's setting -->
+    <gpg.skip>false</gpg.skip>                     <!-- override parent's setting -->
   </properties>
 
 </project>
